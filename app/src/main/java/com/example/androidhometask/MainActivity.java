@@ -1,6 +1,7 @@
 package com.example.androidhometask;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -36,6 +37,13 @@ public class MainActivity extends AppCompatActivity {
 
 
         //******** Retrofit Api Get method ******** //
+        getApiResponse();
+
+    }
+
+
+    public void getApiResponse(){
+
         RecordService recordService = RetrofitClient
                 .getClient(baseUrl)
                 .create(RecordService.class);
@@ -47,10 +55,12 @@ public class MainActivity extends AppCompatActivity {
                         if(response.isSuccessful()){
 
                             ReportResponse reportResponse = response.body();
-                            LinearLayoutManager linearLayoutManager =  new LinearLayoutManager(MainActivity.this);
+                            // LinearLayoutManager linearLayoutManager =  new LinearLayoutManager(MainActivity.this);
                             recordAdapter = new RecordAdapter(MainActivity.this,reportResponse);
-                            linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
-                            recyclerView.setLayoutManager(linearLayoutManager);
+                            //linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+                            GridLayoutManager gridLayoutManager = new GridLayoutManager(MainActivity.this,2);
+                            recyclerView.setLayoutManager(gridLayoutManager);
+                            recordAdapter.notifyDataSetChanged();
                             recyclerView.setAdapter(recordAdapter);
                             Toast.makeText(MainActivity.this, ""+reportResponse.getReport().size(), Toast.LENGTH_SHORT).show();
 

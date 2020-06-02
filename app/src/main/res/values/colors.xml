@@ -3,8 +3,17 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+
     <color name="colorNavBlue">#23ACF1</color>
     <color name="colorWhite">#FFFFFF</color>
     <color name="colorViolet">#8C75B6</color>
+
+
+
+    <color name="colorViolate">#6A1B9A</color>
+    <color name="colorDeepViolate">#4A148C</color>
     <color name="colorBatman">#514C4C</color>
+
+
+
 </resources>

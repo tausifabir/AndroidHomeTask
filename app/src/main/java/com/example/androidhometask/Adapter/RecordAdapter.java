@@ -75,13 +75,14 @@ public class RecordAdapter extends RecyclerView.Adapter<RecordAdapter.RecordView
     public class RecordViewHolder extends RecyclerView.ViewHolder{
 
         ImageView imageViewTV;
-        TextView titleTV,priceTV;
+        TextView titleTV,priceTV,tkTV;
 
         public RecordViewHolder(@NonNull View itemView) {
             super(itemView);
             imageViewTV = itemView.findViewById(R.id.imageurlID);
             titleTV = itemView.findViewById(R.id.titleID);
             priceTV = itemView.findViewById(R.id.priceID);
+            tkTV = itemView.findViewById(R.id.tkID);
         }
     }
 

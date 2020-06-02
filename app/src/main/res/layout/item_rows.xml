@@ -20,7 +20,7 @@
 
 
         <RelativeLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             >
 
@@ -41,12 +41,14 @@
 
             <TextView
                 android:id="@+id/titleID"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="30dp"
                 android:drawablePadding="10dp"
                 android:ellipsize="end"
                 android:maxLines="1"
                 android:singleLine="true"
+                android:textStyle="bold"
+                android:textSize="18sp"
                 android:layout_marginRight="160dp"
                 android:textColor="@color/colorBatman"
                 android:layout_below="@id/imageurlID"
@@ -54,19 +56,45 @@
                 />
 
 
-            <TextView
-                android:id="@+id/priceID"
+            <TableLayout
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:drawablePadding="10dp"
-                android:ellipsize="end"
-                android:maxLines="1"
-                android:singleLine="true"
-                android:layout_marginRight="160dp"
-                android:textColor="@color/colorBatman"
+                android:layout_height="wrap_content"
                 android:layout_below="@id/titleID"
-                tools:text="Price"
-                />
+                android:orientation="vertical"
+                >
+
+                <TableRow>
+                    <TextView
+                        android:id="@+id/priceID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:drawablePadding="10dp"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:layout_weight=".5"
+                        android:textSize="15sp"
+                        android:textColor="@color/colorBatman"
+                        tools:text="Price"
+                        android:textAlignment="center"
+                        />
+
+
+                    <TextView
+                        android:id="@+id/tkID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:drawablePadding="10dp"
+                        android:ellipsize="end"
+                        android:layout_weight="4"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:textSize="15sp"
+                        android:textColor="@color/colorBatman"
+                        android:text="TK."
+                        />
+                </TableRow>
+            </TableLayout>
 
 
 
